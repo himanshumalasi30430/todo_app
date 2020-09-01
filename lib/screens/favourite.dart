@@ -16,7 +16,7 @@ class FavouriteItemList extends StatefulWidget {
 
 class _FavouriteItemListState extends State<FavouriteItemList> {
   List<Todo> _todos = [];
-
+  int currentIndex = 0;
   loadTodos() async {
     var todos = await DatabaseHelper.instance.queryAllFavourite();
     setState(() {
@@ -45,7 +45,7 @@ class _FavouriteItemListState extends State<FavouriteItemList> {
                   subtitle: Text(_todos[index].subtitle),
                   trailing: Icon(
                     Icons.favorite,
-                    color: Colors.pink,
+                    color: Colors.green,
                   ),
                 );
               })),
