@@ -34,11 +34,10 @@ class _MainPageState extends State<MainPage> {
   String subtitle = '';
 
   bool favorite = false;
-  int currentIndex = 0;
 
-  callback(newAbc) {
+  callback(value) {
     setState(() {
-      favorite = newAbc;
+      favorite = value;
     });
   }
 
@@ -136,16 +135,16 @@ class _MainPageState extends State<MainPage> {
                     title: Text('Create a Todo'),
                     content: Container(
                       height: 145,
-                      child: Form(
+                      child: Container(
                         child: Column(
                           children: [
-                            TextFormField(
+                            TextField(
                               onChanged: (value) {
                                 title = value;
                               },
                               decoration: InputDecoration(hintText: 'Title'),
                             ),
-                            TextFormField(
+                            TextField(
                               onChanged: (value) {
                                 subtitle = value;
                               },
